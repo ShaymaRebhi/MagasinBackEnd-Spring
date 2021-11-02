@@ -16,7 +16,20 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
+
+
 @Table( name = "Facture")
 public class Facture implements Serializable  {
 	@Id
@@ -32,46 +45,6 @@ public class Facture implements Serializable  {
 	private Set<DetailFacture> detailFacture;
     @ManyToOne
     Client client;
-	public Long getIdFacture() {
-		return idFacture;
-	}
-	public void setIdFacture(Long idFacture) {
-		this.idFacture = idFacture;
-	}
-	public Float getMontantRemise() {
-		return montantRemise;
-	}
-	public void setMontantRemise(Float montantRemise) {
-		this.montantRemise = montantRemise;
-	}
-	public Float getMontantFacture() {
-		return montantFacture;
-	}
-	public void setMontantFacture(Float montantFacture) {
-		this.montantFacture = montantFacture;
-	}
-	public Date getDateFacture() {
-		return dateFacture;
-	}
-	public void setDateFacture(Date dateFacture) {
-		this.dateFacture = dateFacture;
-	}
-	public Boolean getActive() {
-		return active;
-	}
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
-	public Facture(Long idFacture, Float montantRemise, Float montantFacture, Date dateFacture, Boolean active) {
-		super();
-		this.idFacture = idFacture;
-		this.montantRemise = montantRemise;
-		this.montantFacture = montantFacture;
-		this.dateFacture = dateFacture;
-		this.active = active;
-	}
-	public Facture() {
-		super();
-	}
+
     
 }
